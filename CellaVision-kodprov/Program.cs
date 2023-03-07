@@ -31,11 +31,11 @@ class Program
         }
 
         //This is to check if what Tokens are accepted and that they have the righht type.
-        //Console.WriteLine("Tokens:");
-        //foreach (var token in tokens)
-        //{
-        //    Console.WriteLine(token + "\t : " + token.GetType());
-        //}
+        Console.WriteLine("Tokens:");
+        foreach (var token in tokens)
+        {
+            Console.WriteLine(token + "\t : " + token.GetType());
+        }
     }
 
     public static byte ReadByte()
