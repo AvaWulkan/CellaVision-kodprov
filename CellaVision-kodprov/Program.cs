@@ -4,7 +4,8 @@ using System.Text.RegularExpressions;
 
 class Program
 {
-    public static string endlessStreamOfBytes = "PING 23 MOVE 24 X 100 \n TEST 42";
+    //here is the stream of bytes that are read by the ReadByte(), feel free to try different textlines
+    public static string endlessStreamOfBytes = "PING 23 MOVE 24 X 100 \n TEST 42"; 
     public static bool run = true;
     public static ArrayList tokens = new ArrayList();
 
@@ -29,11 +30,12 @@ class Program
             else throw new Exception("Wrong input: \"" + (Char)b + "\" is not a valid character");
         }
 
-        Console.WriteLine("Tokens:");
-        foreach (var token in tokens)
-        {
-            Console.WriteLine(token + "\t : " + token.GetType());
-        }
+        //This is to check if what Tokens are accepted and that they have the righht type.
+        //Console.WriteLine("Tokens:");
+        //foreach (var token in tokens)
+        //{
+        //    Console.WriteLine(token + "\t : " + token.GetType());
+        //}
     }
 
     public static byte ReadByte()
@@ -55,8 +57,8 @@ class Program
             }
             else if (Regex.IsMatch(token, @"^[0-9]+$"))
             {
-                int i = int.Parse(token);
-                tokens.Add(i);
+                int sequenceNumber = int.Parse(token);
+                tokens.Add(sequenceNumber);
             }
             else throw new Exception("Wrong input: \"" + token + "\" is neither a valid word nor number");
         }
